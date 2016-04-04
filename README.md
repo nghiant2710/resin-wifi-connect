@@ -1,18 +1,15 @@
 # resin-wifi-connect
 
-A tool to allow WiFi configuration to be set via a captive portal. It checks whether WiFi is connected, tries to join the favorite network, and if this fails, it opens an Access Point to which you can connect using a laptop or mobile phone and input new WiFi credentials.
+A Resin base image with a tool to allow WiFi configuration to be set via a captive portal. It checks whether WiFi is connected, tries to join the favorite network, and if this fails, it opens an Access Point to which you can connect using a laptop or mobile phone and input new WiFi credentials.
 
 ## How to use this
-This is a [resin.io](http://resin.io) application. Check out our [Getting Started](http://docs.resin.io/#/pages/installing/gettingStarted.md) guide if it's your first time using Resin.
+This is a [resin.io](http://resin.io) base image. Check our [dockerhub repository](https://hub.docker.com/r/nghiant2710/resin-wifi-connect/tags/) or edit the [build script](./automation/jenkins_build.sh) to build our own image. Check out our [Getting Started](http://docs.resin.io/#/pages/installing/gettingStarted.md) guide if it's your first time using Resin.
 
-This project is meant to be integrated as part of a larger application (that is, _your_ application). An example on how to use this on a Python project can be found [here](https://github.com/resin-io-projects/resin-wifi-connect-python-example).
+This project is meant to be integrated as part of a larger application (that is, _your_ application).
 
-If you need to add dependencies, add the corresponding statements in the [Dockerfile](./Dockerfile.template) template. You can add the commands that run your app in the [start](./start) script. This app only exits after a successful connection, so if you add your app after [line 3](./start#L3) you ensure that everything happens after wifi is correctly configured.
-
-This is a node.js application, but your app can be any language/framework you want as long as you install it properly - if you need help, check out our [Dockerfile guide](http://docs.resin.io/#/pages/using/dockerfile.md). This project uses a Resin feature called "Dockerfile template": the base image is chosen depending on the architecture, specified by the `%%RESIN_ARCH%%` variable (see [line 1](./Dockerfile.template#L1) in the template).
+This is a node.js application, but your app can be any language/framework you want as long as you install it properly - if you need help, check out our [Dockerfile guide](http://docs.resin.io/#/pages/using/dockerfile.md).
 
 ## Supported boards / dongles
-**For the Intel Edison version of this software, check the [edison branch](https://github.com/resin-io/resin-wifi-connect/tree/edison) in this repository.**
 
 This software has been successfully tested on Raspberry Pi's A+ and 2B using the following WiFi dongles:
 
